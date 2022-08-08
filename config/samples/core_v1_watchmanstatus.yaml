@@ -1,0 +1,6 @@
+apiVersion: core.openfeature.dev/v1
+kind: WatchmanStatus
+metadata:
+  name: watchmanstatus-sample
+spec:
+  # TODO(user): Add fields here

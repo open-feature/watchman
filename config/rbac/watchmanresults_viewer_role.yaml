@@ -1,0 +1,20 @@
+# permissions for end users to view watchmanresults.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: watchmanresults-viewer-role
+rules:
+- apiGroups:
+  - demo.openfeature.dev
+  resources:
+  - watchmanresults
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - demo.openfeature.dev
+  resources:
+  - watchmanresults/status
+  verbs:
+  - get

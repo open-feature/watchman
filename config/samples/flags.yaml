@@ -1,0 +1,19 @@
+apiVersion: core.openfeature.dev/v1alpha1
+kind: FeatureFlagConfiguration
+metadata:
+  name: watchman-flags
+  namespace: watchman-system
+spec:
+  featureFlagSpec: |
+    {
+      "flags": {
+        "blocking": {
+          "state": "ENABLED",
+          "variants": {
+            "on": true,
+            "off": false
+          },
+          "defaultVariant": "on"
+        }
+      }
+    }
