@@ -6,4 +6,4 @@ configurations:
 - kustomizeconfig.yaml
 
 commonAnnotations:
-  cert-manager.io/inject-ca-from: default/watchman-webhook-cert 
+  cert-manager.io/inject-ca-from: watchman-system/watchman-webhook-cert 
