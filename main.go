@@ -18,7 +18,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"os"
 
 	// Import all Kubernetes client auth plugins (e.g. Azure, GCP, OIDC, etc.)
@@ -51,7 +50,7 @@ func init() {
 }
 
 func main() {
-	fmt.Println("Starting")
+	setupLog.Info("Starting")
 	var metricsAddr string
 	var enableLeaderElection bool
 	var probeAddr string
@@ -60,12 +59,12 @@ func main() {
 	flag.BoolVar(&enableLeaderElection, "leader-elect", false,
 		"Enable leader election for controller manager. "+
 			"Enabling this will ensure there is only one active controller manager.")
-	fmt.Println("Setup flagD")
+	setupLog.Info("Setup flagD")
 	// Setup flagD
 	openfeature.SetProvider(flagd.NewProvider(
 		flagd.WithService(flagd.GRPC),
 		flagd.WithHost("localhost"),
-		flagd.WithPort(8080),
+		flagd.WithPort(8013),
 	))
 
 	client := openfeature.NewClient("app")

@@ -2,6 +2,7 @@ package webhooks
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 
 	"github.com/go-logr/logr"
@@ -30,15 +31,20 @@ func (a *PodAdmission) Handle(ctx context.Context, req admission.Request) admiss
 		return admission.Errored(http.StatusBadRequest, err)
 	}
 	a.Log.Info("gRPC to flagD started")
-	value, err := a.OFClient.BooleanValue("blocking", false, openfeature.EvaluationContext{},
+	value, err := a.OFClient.BooleanValue("blocking", false,
+		openfeature.EvaluationContext{},
 		openfeature.EvaluationOptions{})
 	if err != nil {
 		a.Log.Error(err, "error fetching from flagD")
+		return admission.Errored(500, err)
 	}
-	if !value {
+
+	a.Log.Info(fmt.Sprintf("blocking flag response %t", value))
+	a.Log.Info("gRPC to flagD completed")
+
+	if value {
 		return admission.Denied("flag set to block admission")
 	}
-	a.Log.Info("gRPC to flagD completed")
 
 	return admission.Allowed("flag set to allow admission")
 }
