@@ -15,6 +15,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.2.0 // indirect
 	github.com/kr/pretty v0.3.0 // indirect
 	github.com/open-feature/flagd v0.1.0 // indirect
+	github.com/open-feature/golang-sdk-contrib v0.0.0-20220902135659-db5034fa7b81 // indirect
 	github.com/sirupsen/logrus v1.9.0 // indirect
 	go.buf.build/grpc/go/open-feature/flagd v1.4.2 // indirect
 	google.golang.org/genproto v0.0.0-20220919141832-68c03719ef51 // indirect
@@ -53,8 +54,8 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
-	github.com/open-feature/golang-sdk v0.0.0-20220805193931-f7a60fe7049b
-	github.com/open-feature/golang-sdk-contrib/providers/flagd v0.0.0-20220804161911-1fbf1eb98a15
+	github.com/open-feature/golang-sdk v0.3.0
+	github.com/open-feature/golang-sdk-contrib/providers/flagd v0.0.0-20220902135659-db5034fa7b81
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/prometheus/client_golang v1.13.0 // indirect
 	github.com/prometheus/client_model v0.2.0 // indirect
