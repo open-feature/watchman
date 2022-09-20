@@ -4,8 +4,6 @@ metadata:
   name: watchman-flags
   namespace: watchman-system
 spec:
-  flagDSpec:
-    port: "8013"
   featureFlagSpec: |
     {
       "flags": {
