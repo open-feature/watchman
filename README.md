@@ -5,7 +5,7 @@
 ![licence](https://img.shields.io/github/license/open-feature/watchman)
 ![size](https://img.shields.io/github/repo-size/open-feature/watchman)
 
-<img src="images/doggo.png" width="250px;" />
+<img src="images/doggo.jpeg" width="250px;" />
 
 A general purpose admission controller that uses open-feature to control it's capabilities.
 
