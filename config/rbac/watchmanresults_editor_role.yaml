@@ -1,0 +1,24 @@
+# permissions for end users to edit watchmanresults.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: watchmanresults-editor-role
+rules:
+- apiGroups:
+  - demo.openfeature.dev
+  resources:
+  - watchmanresults
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - demo.openfeature.dev
+  resources:
+  - watchmanresults/status
+  verbs:
+  - get

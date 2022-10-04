@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: watchman-selfsigned-issuer
+  namespace: watchman-system
+spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate  
+metadata:  
+  name: watchman-webhook-cert
+  namespace: watchman-system
+spec:  
+  secretName: sidecar-injector-certs  
+  dnsNames:
+    - watchman-webhook-service
+    - watchman-webhook-service.watchman-system.svc  
+    - watchman-webhook-service.watchman-system.svc.cluster.local  
+  issuerRef:  
+    name:  watchman-selfsigned-issuer
